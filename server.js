@@ -3,9 +3,12 @@ const port = 3000;
 const app = express();
 
 const mongoose = require('mongoose');
-const uri = 'mongodb+srv://username:password@cluster0.0n8qgpd.mongodb.net/md18305';
+const uri = 'mongodb+srv://duylh17:GsF3hosYpAQxZAHl@cluster0.0n8qgpd.mongodb.net/md18305';
 
 const svModel = require('./studentModel');
+
+const apiMobile = require('./api');
+app.use('/api', apiMobile);
 
 app.get('/', async (req, res) => {
     await mongoose.connect(uri);
@@ -41,5 +44,7 @@ app.get('/add_sv', async (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
+
+module.exports = app;
 
 
