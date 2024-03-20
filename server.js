@@ -3,7 +3,9 @@ const port = 3000;
 const app = express();
 
 const mongoose = require('mongoose');
-const uri = 'mongodb+srv://duylh17:GsF3hosYpAQxZAHl@cluster0.0n8qgpd.mongodb.net/md18305';
+
+const RES = require('./COMMON_RES');
+const uri = RES.uri;
 
 const svModel = require('./studentModel');
 
